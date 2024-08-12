@@ -1,47 +1,62 @@
-Araç Kiralama Projesi: Masaüstü Uygulaması Geliştirme Rehberi
-Bu rehber, Java ve Swing teknolojilerini kullanarak gelişmiş bir araç kiralama sistemini oluşturmayı hedefleyen bir masaüstü uygulaması projesi üzerinde durmaktadır. Proje, kullanıcı arayüzü tasarımı, veritabanı yönetimi ve iş mantığı geliştirme konularını kapsar. Ayrıca, projenin genel yapısını, modüllerini ve veritabanı kurulumunu detaylandırır.
+# Araç Kiralama Projesi: Masaüstü Uygulaması Geliştirme Rehberi
 
-Projenin Amacı ve Özellikleri
-Genel Amaç
-Araç kiralama sistemi, firmaların araçlarını yönetmelerine, müşterilere hizmet vermelerine ve rezervasyon işlemlerini kolaylaştırmasına yardımcı olacak bir platformdur. Sistem, araçların detaylı bilgilerini saklar, kullanıcıların ihtiyaçlarına göre arama yapmalarına olanak tanır ve rezervasyon işlemlerini gerçekleştirebilir.
+This guide focuses on developing an advanced car rental system desktop application using Java and Swing technologies. The project covers user interface design, database management, and business logic development. It also details the overall structure, modules, and database setup.
 
-Özellikler
-Araç Yönetimi
-Araç ekleme, güncelleme ve silme işlemleri.
-Araç bilgilerinin (marka, model, plaka, renk, kilometre, yakıt türü, vites türü vb.) yönetilmesi.
-Model ve Marka Yönetimi
-Araç modelleri ve markalarının eklenmesi, güncellenmesi ve silinmesi.
-Modellerin detaylı bilgilerinin (tip, yakıt türü, vites türü, üretim yılı vb.) yönetilmesi.
-Rezervasyon Yönetimi
-Araç rezervasyonlarının yapılması, güncellenmesi ve iptali.
-Araçların müsaitlik durumlarının kontrol edilmesi.
-Kullanıcı bilgilerinin (isim, TC kimlik numarası, telefon numarası, e-posta) yönetilmesi.
-Arama ve Filtreleme
-Belirli kriterlere göre (marka, model, yakıt türü, vites türü, tip) araç arama ve filtreleme.
-Plaka bilgisine göre araç arama.
-Proje Yapısı
-Proje, dört ana modülden oluşur: Entity, DAO, Business ve View modülleri.
+## Project Purpose and Features
 
-Entity Modülü
-Veritabanı tablolarını ve bu tablolara ait varlık nesnelerini tanımlar.
-Kullanıcı, marka, model, araç, rezervasyon gibi temel entity nesnelerini içerir.
-Nesneler arasındaki ilişkileri belirler.
-DAO (Data Access Object) Modülü
-Veritabanı erişimi ve işlemleri için bir arayüz sağlar.
-Entity modülündeki nesnelerin veritabanına kaydedilmesi, güncellenmesi ve silinmesi süreçlerini yönetir.
-Veritabanından veri alma işlemlerini gerçekleştirir.
-Business Modülü
-İş mantığını yönetir ve uygulama içindeki temel işlemleri gerçekleştirir.
-Fiyatlandırma ve araç kiralama hesaplamaları gibi iş mantığı operasyonlarını yönetir.
-DAO modülü ile etkileşime girer.
-View Modülü
-Kullanıcı arayüzünü (UI) yönetir ve kullanıcıyla etkileşimi sağlar.
-Araç listesi ve kiralama ekranı gibi kullanıcı bilgilerini gösterir.
-Kullanıcının girdiği bilgileri iş katmanına ileterek işlemleri başlatır.
-Veritabanı Kurulumu
-Gereksinimler
-PostgreSQL'in yüklü olması
-rentacarDatabase.sql dosyasının mevcut olması
-Adımlar
-PostgreSQL'i Başlatın: PostgreSQL sunucusunun çalıştığından emin olun.
-Yeni Bir Veritabanı Oluşturun: PostgreSQL terminal veya pgAdmin gibi bir araç kullanarak yeni bir veritabanı oluşturun. 
+### General Purpose
+The car rental system is designed to help companies manage their vehicles, serve customers, and facilitate reservation processes. The system stores detailed information about the vehicles, allows users to search based on their needs, and processes reservations.
+
+### Features
+
+#### Vehicle Management
+- Add, update, and delete vehicles.
+- Manage vehicle information (brand, model, license plate, color, mileage, fuel type, transmission type, etc.).
+
+#### Model and Brand Management
+- Add, update, and delete vehicle models and brands.
+- Manage detailed information about models (type, fuel type, transmission type, production year, etc.).
+
+#### Reservation Management
+- Make, update, and cancel vehicle reservations.
+- Check vehicle availability.
+- Manage user information (name, ID number, phone number, email).
+
+#### Search and Filtering
+- Search and filter vehicles based on specific criteria (brand, model, fuel type, transmission type, type).
+- Search vehicles by license plate number.
+
+## Project Structure
+
+The project is organized into four main modules: Entity, DAO, Business, and View.
+
+### Entity Module
+- Defines the database tables and their corresponding entity objects.
+- Includes basic entity objects like User, Brand, Model, Vehicle, and Reservation.
+- Establishes relationships between objects.
+
+### DAO (Data Access Object) Module
+- Provides an interface for database access and operations.
+- Manages the processes of saving, updating, and deleting entity objects in the database.
+- Handles data retrieval operations from the database.
+
+### Business Module
+- Manages the business logic and performs core operations within the application.
+- Handles business logic operations like pricing and car rental calculations.
+- Interacts with the DAO module.
+
+### View Module
+- Manages the user interface (UI) and facilitates user interaction.
+- Displays information to the user, such as vehicle lists and rental screens.
+- Passes user input to the business layer to initiate operations.
+
+## Database Setup
+
+### Requirements
+- PostgreSQL must be installed.
+- The `rentacarDatabase.sql` file must be available.
+
+### Steps
+
+1. **Start PostgreSQL**: Ensure that the PostgreSQL server is running.
+2. **Create a New Database**: Use the PostgreSQL terminal or a tool like pgAdmin to create a new database.
